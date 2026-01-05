@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delhi Public Library | Ministry of Culture, Govt. of India</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        gov: {
+                            blue: '#002F6C',
+                            blueLight: '#004A99',
+                            saffron: '#FF9933',
+                            green: '#138808',
+                            slate: '#F8FAFC',
+                            dark: '#0F172A'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Source Sans 3', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass-header {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+        }
+        .dark .glass-header {
+            background: rgba(15, 23, 42, 0.9);
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="bg-gov-slate dark:bg-gov-dark text-slate-800 dark:text-slate-200 transition-colors duration-300">
+
+    <!-- Skip Link -->
+    <a href="#main-content" class="sr-only focus:not-sr-only absolute z-50 p-2 bg-gov-saffron text-white">Skip to main content</a>
+
+    <!-- Top Utility Bar -->
+    <div class="bg-gov-blue text-white text-[10px] md:text-xs py-2 px-4 flex justify-between items-center border-b border-white/10">
+        <div class="flex items-center space-x-4">
+            <span class="hidden lg:inline font-medium">Government of India | Ministry of Culture</span>
+            <div class="flex items-center space-x-2">
+                <button class="hover:text-gov-saffron font-bold">A+</button>
+                <button class="hover:text-gov-saffron font-bold">A-</button>
+                <span class="opacity-30">|</span>
+                <button class="hover:underline">English</button>
+                <button class="hover:underline font-hindi">हिन्दी</button>
+            </div>
+        </div>
+        <div class="flex items-center space-x-3 md:space-x-4">
+            <button id="dark-mode-toggle" class="p-1 rounded-full hover:bg-white/20 transition-colors" aria-label="Toggle Dark Mode">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                </svg>
+            </button>
+            <a href="#" class="hover:text-gov-saffron">RTI</a>
+            <a href="#" class="hover:text-gov-saffron hidden sm:inline">Screen Reader Access</a>
+        </div>
+    </div>
+
+    <!-- Main Navigation -->
+    <header class="sticky top-0 z-40 w-full glass-header border-b border-slate-200 dark:border-slate-800 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo Section -->
+                <div class="flex items-center space-x-4">
+                    <img src="https://via.placeholder.com/60x60?text=Emblem" alt="GoI Emblem" class="h-12 w-auto dark:invert">
+                    <div class="hidden sm:block border-l border-slate-300 dark:border-slate-700 h-10 mx-2"></div>
+                    <div>
+                        <h1 class="font-heading font-bold text-base md:text-xl leading-tight text-gov-blue dark:text-white uppercase tracking-tight">Delhi Public Library</h1>
+                        <p class="text-[9px] md:text-[10px] text-slate-500 uppercase tracking-widest font-semibold">An Autonomous Body Under Ministry of Culture</p>
+                    </div>
+                </div>
+
+                <!-- Desktop Nav -->
+                <nav class="hidden lg:flex space-x-1">
+                    <a href="#" class="px-3 py-2 text-sm font-semibold text-gov-blue dark:text-white hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors">Home</a>
+                    <div class="relative group">
+                        <button class="px-3 py-2 text-sm font-semibold flex items-center hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors">
+                            Organization
+                            <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+                        </button>
+                    </div>
+                    <a href="#" class="px-3 py-2 text-sm font-semibold hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors">E-Resources</a>
+                    <a href="#" class="px-3 py-2 text-sm font-semibold hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors">Services</a>
+                    <a href="#" class="px-3 py-2 text-sm font-semibold hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors">Media</a>
+                </nav>
+
+                <!-- CTA -->
+                <div class="flex items-center space-x-3">
+                    <button class="hidden md:flex bg-gov-blue hover:bg-gov-blueLight text-white px-5 py-2.5 rounded-full text-xs font-bold transition-all shadow-lg active:scale-95">
+                        Member Portal
+                    </button>
+                    <button id="mobile-menu-button" class="lg:hidden p-2 text-slate-600 dark:text-slate-300">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobile-menu" class="fixed inset-0 z-50 hidden">
+        <div class="fixed inset-0 bg-black/60 backdrop-blur-sm" onclick="toggleMenu()"></div>
+        <nav class="fixed top-0 right-0 w-72 h-full bg-white dark:bg-gov-dark shadow-2xl p-6 flex flex-col">
+            <div class="flex justify-between items-center mb-8">
+                <span class="font-bold text-gov-blue dark:text-white">Menu</span>
+                <button onclick="toggleMenu()" class="p-2 bg-slate-100 dark:bg-slate-800 rounded-full">✕</button>
+            </div>
+            <div class="flex flex-col space-y-1">
+                <a href="#" class="py-3 px-4 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800 font-semibold text-lg">Home</a>
+                <a href="#" class="py-3 px-4 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800 font-semibold text-lg">About DPL</a>
+                <a href="#" class="py-3 px-4 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800 font-semibold text-lg">Digital Library</a>
+                <a href="#" class="py-3 px-4 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800 font-semibold text-lg">Membership</a>
+                <a href="#" class="py-3 px-4 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800 font-semibold text-lg">Contact</a>
+            </div>
+            <div class="mt-auto">
+                <button class="w-full bg-gov-blue text-white py-4 rounded-xl font-bold shadow-xl">Login / Join</button>
+            </div>
+        </nav>
+    </div>
+
+    <main id="main-content">
+        <!-- Hero & Spotlight Section -->
+        <section class="bg-gov-blue dark:bg-slate-950 text-white pb-20 overflow-hidden">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-20 grid lg:grid-cols-2 gap-12 items-center">
+                <!-- Text Content -->
+                <div class="space-y-8 text-center lg:text-left">
+                    <div class="inline-flex items-center space-x-2 bg-white/10 px-4 py-2 rounded-full text-xs font-bold border border-white/20">
+                        <span class="w-2 h-2 bg-gov-saffron rounded-full animate-pulse"></span>
+                        <span>Now Open: Sarojini Nagar Evening Shift</span>
+                    </div>
+                    <h2 class="text-4xl md:text-5xl lg:text-6xl font-heading font-extrabold leading-tight">
+                        Democratizing <br>
+                        <span class="text-gov-saffron">Access to Knowledge</span>
+                    </h2>
+                    <p class="text-lg text-slate-300 max-w-xl mx-auto lg:mx-0">
+                        Delhi Public Library serves over 4.5 million members across the National Capital with physical and digital collections spanning 30+ languages.
+                    </p>
+                    
+                    <!-- Integrated Search -->
+                    <div class="bg-white dark:bg-slate-900 p-2 rounded-2xl shadow-2xl flex flex-col sm:flex-row items-stretch sm:items-center">
+                        <div class="flex-grow flex items-center px-4">
+                            <svg class="h-5 w-5 text-slate-400 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
+                            <input type="text" placeholder="Search books, articles, archives..." class="w-full py-4 bg-transparent border-none focus:ring-0 text-slate-800 dark:text-white placeholder-slate-400 font-medium">
+                        </div>
+                        <button class="bg-gov-blue hover:bg-gov-blueLight text-white px-8 py-4 rounded-xl font-bold transition-all sm:ml-2 active:scale-95 shadow-lg">
+                            Search Catalog
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Spotlight Slider Placeholder -->
+                <div class="relative group">
+                    <div class="aspect-video bg-slate-800 rounded-3xl overflow-hidden border-4 border-white/10 shadow-2xl relative">
+                        <!-- Simulated Image -->
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent z-10"></div>
+                        <img src="https://via.placeholder.com/800x450?text=Digital+India+at+DPL" alt="Featured" class="w-full h-full object-cover">
+                        <div class="absolute bottom-8 left-8 right-8 z-20">
+                            <h3 class="text-2xl font-bold mb-2">Expanding Digital Horizons</h3>
+                            <p class="text-sm text-slate-300">New digital archives of historical manuscripts now available online for researchers.</p>
+                        </div>
+                    </div>
+                    <!-- Slider Nav -->
+                    <div class="absolute -bottom-6 left-1/2 -translate-x-1/2 flex space-x-2">
+                        <span class="w-8 h-1.5 bg-gov-saffron rounded-full"></span>
+                        <span class="w-3 h-1.5 bg-white/30 rounded-full"></span>
+                        <span class="w-3 h-1.5 bg-white/30 rounded-full"></span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quick Action Grid -->
+        <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-10 relative z-30">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+                <a href="#" class="bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-xl hover:shadow-2xl transition-all border-b-4 border-gov-saffron group">
+                    <div class="w-10 h-10 bg-gov-saffron/10 text-gov-saffron rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                        <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z" /></svg>
+                    </div>
+                    <span class="font-bold text-sm block">Join Library</span>
+                    <span class="text-[10px] text-slate-400 uppercase tracking-wider font-bold">Online Registration</span>
+                </a>
+                <a href="#" class="bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-xl hover:shadow-2xl transition-all border-b-4 border-gov-blue group">
+                    <div class="w-10 h-10 bg-gov-blue/10 text-gov-blue rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                        <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" /></svg>
+                    </div>
+                    <span class="font-bold text-sm block">E-Library</span>
+                    <span class="text-[10px] text-slate-400 uppercase tracking-wider font-bold">Journals & Books</span>
+                </a>
+                <a href="#" class="bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-xl hover:shadow-2xl transition-all border-b-4 border-gov-green group">
+                    <div class="w-10 h-10 bg-gov-green/10 text-gov-green rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                        <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+                    </div>
+                    <span class="font-bold text-sm block">Locator</span>
+                    <span class="text-[10px] text-slate-400 uppercase tracking-wider font-bold">Find Branches</span>
+                </a>
+                <a href="#" class="bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-xl hover:shadow-2xl transition-all border-b-4 border-slate-300 group">
+                    <div class="w-10 h-10 bg-slate-100 text-slate-600 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                        <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
+                    </div>
+                    <span class="font-bold text-sm block">Events</span>
+                    <span class="text-[10px] text-slate-400 uppercase tracking-wider font-bold">View Calendar</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- Dynamic Content Section (The Core of the Portal) -->
+        <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+            <div class="grid lg:grid-cols-12 gap-12">
+                
+                <!-- News, Notices & Press Releases (Left Col) -->
+                <div class="lg:col-span-8">
+                    <div class="border-b border-slate-200 dark:border-slate-800 mb-8 flex items-center space-x-8 overflow-x-auto hide-scrollbar">
+                        <button class="pb-4 text-gov-blue dark:text-white border-b-2 border-gov-blue font-bold text-lg whitespace-nowrap">Latest News</button>
+                        <button class="pb-4 text-slate-400 hover:text-gov-blue dark:hover:text-white font-semibold text-lg whitespace-nowrap">Announcements</button>
+                        <button class="pb-4 text-slate-400 hover:text-gov-blue dark:hover:text-white font-semibold text-lg whitespace-nowrap">Press Releases</button>
+                        <button class="pb-4 text-slate-400 hover:text-gov-blue dark:hover:text-white font-semibold text-lg whitespace-nowrap">Tenders</button>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <!-- News Card with Image -->
+                        <div class="bg-white dark:bg-slate-800 rounded-2xl overflow-hidden shadow-sm group cursor-pointer hover:shadow-md transition-all">
+                            <div class="aspect-video bg-slate-100 dark:bg-slate-700 relative overflow-hidden">
+                                <img src="https://via.placeholder.com/400x225?text=Childrens+Day" alt="News" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                                <span class="absolute top-4 left-4 bg-gov-blue text-white text-[10px] font-bold px-2 py-1 rounded">CULTURAL</span>
+                            </div>
+                            <div class="p-6">
+                                <span class="text-xs text-slate-400 font-bold uppercase">Oct 28, 2025</span>
+                                <h4 class="font-bold text-lg mt-2 group-hover:text-gov-blue transition-colors leading-tight">State-wide Children's Literacy Festival starts tomorrow</h4>
+                                <p class="text-sm text-slate-500 mt-3 line-clamp-2">The festival features story-telling sessions, painting competitions and puppet shows across 20 branches.</p>
+                            </div>
+                        </div>
+
+                        <!-- Stacked News Items -->
+                        <div class="space-y-6">
+                            <div class="flex space-x-4 items-start group cursor-pointer">
+                                <div class="w-20 h-20 bg-slate-100 dark:bg-slate-700 rounded-xl overflow-hidden flex-shrink-0">
+                                    <img src="https://via.placeholder.com/100x100?text=UPSC" alt="News" class="w-full h-full object-cover">
+                                </div>
+                                <div>
+                                    <span class="text-[10px] text-gov-green font-bold uppercase">Education</span>
+                                    <h5 class="font-bold text-sm group-hover:text-gov-blue transition-colors leading-tight">New UPSC 2026 coaching materials added to Reference Section</h5>
+                                    <p class="text-xs text-slate-400 mt-1">Oct 26, 2025</p>
+                                </div>
+                            </div>
+                            <div class="flex space-x-4 items-start group cursor-pointer">
+                                <div class="w-20 h-20 bg-slate-100 dark:bg-slate-700 rounded-xl overflow-hidden flex-shrink-0">
+                                    <img src="https://via.placeholder.com/100x100?text=Mobile" alt="News" class="w-full h-full object-cover">
+                                </div>
+                                <div>
+                                    <span class="text-[10px] text-gov-saffron font-bold uppercase">Services</span>
+                                    <h5 class="font-bold text-sm group-hover:text-gov-blue transition-colors leading-tight">Mobile Library Bus routes updated for November schedule</h5>
+                                    <p class="text-xs text-slate-400 mt-1">Oct 24, 2025</p>
+                                </div>
+                            </div>
+                            <div class="flex space-x-4 items-start group cursor-pointer">
+                                <div class="w-20 h-20 bg-slate-100 dark:bg-slate-700 rounded-xl overflow-hidden flex-shrink-0">
+                                    <img src="https://via.placeholder.com/100x100?text=Tender" alt="News" class="w-full h-full object-cover">
+                                </div>
+                                <div>
+                                    <span class="text-[10px] text-gov-blue font-bold uppercase">Admin</span>
+                                    <h5 class="font-bold text-sm group-hover:text-gov-blue transition-colors leading-tight">Extension of bid submission for digitizing heritage archive</h5>
+                                    <p class="text-xs text-slate-400 mt-1">Oct 22, 2025</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Featured Sidebar (Right Col) -->
+                <div class="lg:col-span-4 space-y-10">
+                    <!-- Director's Message / Featured Video -->
+                    <div class="bg-gov-slate dark:bg-slate-800 p-6 rounded-3xl border border-slate-200 dark:border-slate-700 relative overflow-hidden">
+                        <div class="absolute -top-10 -right-10 w-32 h-32 bg-gov-blue/5 rounded-full"></div>
+                        <h3 class="font-bold text-lg mb-4 flex items-center">
+                            <span class="w-2 h-2 bg-gov-blue mr-2 rounded-full"></span>
+                            Leadership Desk
+                        </h3>
+                        <div class="aspect-video bg-slate-900 rounded-2xl mb-4 flex items-center justify-center overflow-hidden relative group">
+                            <img src="https://via.placeholder.com/400x225?text=Director+Message" alt="Video" class="opacity-60 group-hover:scale-105 transition-transform">
+                            <button class="absolute bg-white/20 backdrop-blur-md p-4 rounded-full text-white hover:bg-gov-saffron transition-colors">
+                                <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 20 20"><path d="M4.5 3.5l11 6.5-11 6.5v-13z" /></svg>
+                            </button>
+                        </div>
+                        <p class="text-sm font-bold text-gov-blue dark:text-white">Prof. Ajay Kumar Singh</p>
+                        <p class="text-[10px] text-slate-400 uppercase font-bold tracking-wider">Director, DPL</p>
+                        <p class="text-xs italic text-slate-500 mt-3 leading-relaxed">
+                            "Our vision for 2030 is to turn every library branch into a digital learning hub where technology meets heritage."
+                        </p>
+                    </div>
+
+                    <!-- Social Media Wall Placeholder -->
+                    <div class="space-y-4">
+                        <h3 class="font-bold text-lg flex items-center">
+                            <span class="w-2 h-2 bg-gov-saffron mr-2 rounded-full"></span>
+                            Social Feed
+                        </h3>
+                        <div class="bg-[#1DA1F2]/5 dark:bg-[#1DA1F2]/10 p-5 rounded-2xl border border-[#1DA1F2]/20">
+                            <div class="flex items-center space-x-2 mb-3">
+                                <div class="w-8 h-8 bg-[#1DA1F2] rounded-full flex items-center justify-center text-white text-xs font-bold">𝕏</div>
+                                <div class="text-xs">
+                                    <p class="font-bold text-slate-800 dark:text-white">@DelhiPubLib</p>
+                                    <p class="text-slate-400">1h ago</p>
+                                </div>
+                            </div>
+                            <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                                Join us at the Central Library today for a special workshop on Sanskrit Calligraphy! ✨ #DPL #DelhiCulture #Sanskrit
+                            </p>
+                        </div>
+                        <button class="w-full py-3 text-sm font-bold border border-slate-200 dark:border-slate-800 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">Follow us on Socials</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats & Impact -->
+        <section class="bg-gov-blue py-16 text-white relative overflow-hidden">
+             <!-- Decorative -->
+            <div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0); background-size: 40px 40px;"></div>
+            
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-2 lg:grid-cols-4 gap-8 text-center relative z-10">
+                <div>
+                    <span class="text-4xl md:text-5xl font-black block mb-2">1.8M+</span>
+                    <span class="text-xs text-slate-400 uppercase tracking-widest font-bold">Physical Books</span>
+                </div>
+                <div>
+                    <span class="text-4xl md:text-5xl font-black block mb-2">4.5M+</span>
+                    <span class="text-xs text-slate-400 uppercase tracking-widest font-bold">Active Members</span>
+                </div>
+                <div>
+                    <span class="text-4xl md:text-5xl font-black block mb-2">37</span>
+                    <span class="text-xs text-slate-400 uppercase tracking-widest font-bold">Delhi Branches</span>
+                </div>
+                <div>
+                    <span class="text-4xl md:text-5xl font-black block mb-2">500k+</span>
+                    <span class="text-xs text-slate-400 uppercase tracking-widest font-bold">Digital Assets</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Unified Footer -->
+    <footer class="bg-white dark:bg-slate-950 pt-20 pb-10 border-t border-slate-100 dark:border-slate-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Branding & Links -->
+            <div class="grid lg:grid-cols-12 gap-12 mb-16">
+                <div class="lg:col-span-5 space-y-8">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-10 h-10 bg-gov-blue text-white rounded-lg flex items-center justify-center font-bold">DPL</div>
+                        <h4 class="font-heading font-bold text-gov-blue dark:text-white uppercase leading-tight">Delhi Public Library <br><span class="text-[10px] font-normal text-slate-400 lowercase">Autonomous Body Under Ministry of Culture</span></h4>
+                    </div>
+                    <p class="text-sm text-slate-500 max-w-md leading-relaxed">
+                        Established in 1951 as a pilot project by UNESCO and the Government of India, the library has grown into a premier public library system in the metropolitan city of Delhi.
+                    </p>
+                    <div class="flex space-x-3">
+                        <div class="p-3 bg-gov-slate dark:bg-slate-900 rounded-full cursor-pointer hover:bg-gov-blue hover:text-white transition-all">FB</div>
+                        <div class="p-3 bg-gov-slate dark:bg-slate-900 rounded-full cursor-pointer hover:bg-gov-blue hover:text-white transition-all">𝕏</div>
+                        <div class="p-3 bg-gov-slate dark:bg-slate-900 rounded-full cursor-pointer hover:bg-gov-blue hover:text-white transition-all">IG</div>
+                        <div class="p-3 bg-gov-slate dark:bg-slate-900 rounded-full cursor-pointer hover:bg-gov-blue hover:text-white transition-all">YT</div>
+                    </div>
+                </div>
+                
+                <div class="lg:col-span-7 grid grid-cols-2 md:grid-cols-3 gap-8">
+                    <div class="space-y-4">
+                        <h5 class="font-bold text-sm text-slate-800 dark:text-white uppercase tracking-wider">Resources</h5>
+                        <ul class="text-sm text-slate-500 space-y-2">
+                            <li><a href="#" class="hover:text-gov-blue">Online Catalog</a></li>
+                            <li><a href="#" class="hover:text-gov-blue">Digital Archive</a></li>
+                            <li><a href="#" class="hover:text-gov-blue">New Arrivals</a></li>
+                            <li><a href="#" class="hover:text-gov-blue">Periodicals</a></li>
+                        </ul>
+                    </div>
+                    <div class="space-y-4">
+                        <h5 class="font-bold text-sm text-slate-800 dark:text-white uppercase tracking-wider">Governance</h5>
+                        <ul class="text-sm text-slate-500 space-y-2">
+                            <li><a href="#" class="hover:text-gov-blue">RTI Disclosures</a></li>
+                            <li><a href="#" class="hover:text-gov-blue">Tenders</a></li>
+                            <li><a href="#" class="hover:text-gov-blue">Recruitment</a></li>
+                            <li><a href="#" class="hover:text-gov-blue">Annual Reports</a></li>
+                        </ul>
+                    </div>
+                    <div class="space-y-4 col-span-2 md:col-span-1">
+                        <h5 class="font-bold text-sm text-slate-800 dark:text-white uppercase tracking-wider">Contact Us</h5>
+                        <p class="text-xs text-slate-500">
+                            Central Library, H.P.O Building,<br>
+                            Old Delhi - 110006<br>
+                            <span class="font-bold block mt-2">Ph: 011-23951112</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Legals & Gov logos -->
+            <div class="pt-10 border-t border-slate-100 dark:border-slate-900 flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
+                <div class="flex items-center space-x-6">
+                    <img src="https://via.placeholder.com/100x40?text=Digital+India" alt="Logo" class="h-8 grayscale hover:grayscale-0 opacity-50 transition-all dark:invert">
+                    <img src="https://via.placeholder.com/80x40?text=G20" alt="Logo" class="h-8 grayscale hover:grayscale-0 opacity-50 transition-all dark:invert">
+                </div>
+                <div class="text-[10px] text-slate-400 text-center md:text-right">
+                    <div class="space-x-4 mb-2">
+                        <a href="#" class="hover:text-gov-blue">Privacy Policy</a>
+                        <a href="#" class="hover:text-gov-blue">Hyperlink Policy</a>
+                        <a href="#" class="hover:text-gov-blue">Copyright Policy</a>
+                    </div>
+                    <p>© 2025 Delhi Public Library. Contents managed by DPL IT Unit.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Theme Toggle
+        const themeBtn = document.getElementById('dark-mode-toggle');
+        themeBtn.addEventListener('click', () => {
+            document.documentElement.classList.toggle('dark');
+        });
+
+        // Mobile Menu Toggle
+        const mMenu = document.getElementById('mobile-menu');
+        const mBtn = document.getElementById('mobile-menu-button');
+        function toggleMenu() { mMenu.classList.toggle('hidden'); }
+        mBtn.addEventListener('click', toggleMenu);
+
+        // Header Scroll
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            header.classList.toggle('shadow-lg', window.scrollY > 10);
+        });
+    </script>
+</body>
+</html>
