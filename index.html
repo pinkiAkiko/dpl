@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Delhi Public Library - An Autonomous Body Under Ministry of Culture, Government of India. Access millions of books, digital resources, and heritage collections.">
+    <meta name="keywords" content="Delhi Public Library, DPL, Library, Books, E-Resources, Government of India">
+    <title>Delhi Public Library | Ministry of Culture, Govt. of India</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- GIGW: Skip to Main Content -->
+    <a href="#main-content" class="skip-link">Skip to Main Content</a>
+
+    <!-- GIGW: Accessibility Bar -->
+    <div class="accessibility-bar" role="region" aria-label="Accessibility Options">
+        <div class="container">
+            <div class="access-left">
+                <span class="gov-label"><img
+                        src="https://upload.wikimedia.org/wikipedia/commons/5/55/Emblem_of_India.svg"
+                        alt="Government of India Emblem" class="emblem-mini"> Government of India | Ministry of
+                    Culture</span>
+            </div>
+            <div class="access-right">
+                <div class="font-controls" role="group" aria-label="Font Size Controls">
+                    <button onclick="changeFontSize(1)" aria-label="Increase Font Size"
+                        title="Increase Font Size">A+</button>
+                    <button onclick="changeFontSize(0)" aria-label="Normal Font Size"
+                        title="Normal Font Size">A</button>
+                    <button onclick="changeFontSize(-1)" aria-label="Decrease Font Size"
+                        title="Decrease Font Size">A-</button>
+                </div>
+                <div class="separator"></div>
+                <button onclick="toggleContrast()" class="contrast-btn" aria-label="Toggle High Contrast"
+                    title="High Contrast">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                        <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" fill="none" />
+                        <path d="M12 2a10 10 0 0 1 0 20V2z" />
+                    </svg>
+                </button>
+                <div class="separator"></div>
+                <div class="lang-toggle">
+                    <button class="active" lang="en">English</button>
+                    <button lang="hi">हिन्दी</button>
+                </div>
+                <div class="separator"></div>
+                <a href="#" class="access-link">Screen Reader</a>
+                <a href="#" class="access-link">Sitemap</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Header -->
+    <header class="main-header" role="banner">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo-section">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/55/Emblem_of_India.svg"
+                        alt="Government of India Emblem" class="emblem">
+                    <div class="logo-divider"></div>
+                    <div class="logo-text">
+                        <h1>Delhi Public Library</h1>
+                        <p>An Autonomous Body Under Ministry of Culture, Govt. of India</p>
+                    </div>
+                </div>
+
+                <nav class="main-nav" role="navigation" aria-label="Main Navigation">
+                    <ul class="nav-list">
+                        <li><a href="#" class="active">Home</a></li>
+                        <li class="has-dropdown">
+                            <a href="#" aria-haspopup="true" aria-expanded="false">About Us <span
+                                    class="arrow">▼</span></a>
+                            <ul class="dropdown">
+                                <li><a href="#">History</a></li>
+                                <li><a href="#">Vision & Mission</a></li>
+                                <li><a href="#">Organization Structure</a></li>
+                                <li><a href="#">Library Committee</a></li>
+                            </ul>
+                        </li>
+                        <li class="has-dropdown">
+                            <a href="#" aria-haspopup="true" aria-expanded="false">Services <span
+                                    class="arrow">▼</span></a>
+                            <ul class="dropdown">
+                                <li><a href="#">Membership</a></li>
+                                <li><a href="#">Book Lending</a></li>
+                                <li><a href="#">Reference Services</a></li>
+                                <li><a href="#">Mobile Library</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">E-Resources</a></li>
+                        <li><a href="#">Branches</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </nav>
+
+                <div class="header-actions">
+                    <button class="search-toggle" aria-label="Open Search">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <circle cx="11" cy="11" r="8" />
+                            <path d="m21 21-4.35-4.35" />
+                        </svg>
+                    </button>
+                    <a href="#" class="btn-primary">Member Portal</a>
+                    <button class="mobile-menu-btn" aria-label="Open Menu" aria-expanded="false">
+                        <span></span><span></span><span></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Search Overlay -->
+    <div class="search-overlay" role="search" aria-hidden="true">
+        <div class="search-container">
+            <button class="search-close" aria-label="Close Search">×</button>
+            <h2>Search Library Catalog</h2>
+            <form class="search-form">
+                <input type="search" placeholder="Search books, journals, manuscripts..." aria-label="Search">
+                <button type="submit">Search</button>
+            </form>
+            <div class="search-tags">
+                <span>Popular:</span>
+                <a href="#">UPSC Books</a>
+                <a href="#">Hindi Literature</a>
+                <a href="#">Digital Archive</a>
+                <a href="#">Newspapers</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" role="navigation" aria-label="Mobile Navigation" aria-hidden="true">
+        <div class="mobile-menu-header">
+            <span>Menu</span>
+            <button class="mobile-close" aria-label="Close Menu">×</button>
+        </div>
+        <ul class="mobile-nav-list">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">E-Resources</a></li>
+            <li><a href="#">Branches</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+        <a href="#" class="btn-primary mobile-cta">Member Portal</a>
+    </div>
+
+    <main id="main-content" role="main">
+        <!-- Hero Section -->
+        <section class="hero" aria-label="Welcome Banner">
+            <div class="hero-bg">
+                <div class="hero-particles"></div>
+            </div>
+            <div class="container">
+                <div class="hero-grid">
+                    <div class="hero-content">
+                        <div class="hero-badge">
+                            <span class="pulse"></span>
+                            <span>Now Open: Extended Evening Hours at All Branches</span>
+                        </div>
+                        <h2>Democratizing <span class="highlight">Access to Knowledge</span></h2>
+                        <p>India's premier public library system serving over 4.5 million members across the National
+                            Capital with physical and digital collections spanning 30+ languages.</p>
+
+                        <div class="hero-search">
+                            <div class="search-input-wrapper">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <circle cx="11" cy="11" r="8" />
+                                    <path d="m21 21-4.35-4.35" />
+                                </svg>
+                                <input type="text" placeholder="Search books, articles, archives...">
+                            </div>
+                            <button class="btn-search">Search Catalog</button>
+                        </div>
+
+                        <div class="hero-stats">
+                            <div class="stat">
+                                <span class="stat-number" data-count="1800000">0</span>
+                                <span class="stat-label">Books</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-number" data-count="37">0</span>
+                                <span class="stat-label">Branches</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-number" data-count="4500000">0</span>
+                                <span class="stat-label">Members</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="hero-visual">
+                        <div class="hero-slider">
+                            <div class="slide active">
+                                <img src="https://images.unsplash.com/photo-1507842217343-583bb7270b66?w=800&q=80"
+                                    alt="Library interior with bookshelves">
+                                <div class="slide-overlay">
+                                    <h3>Expanding Digital Horizons</h3>
+                                    <p>New digital archives of historical manuscripts now available online</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slider-dots">
+                            <button class="dot active" aria-label="Slide 1"></button>
+                            <button class="dot" aria-label="Slide 2"></button>
+                            <button class="dot" aria-label="Slide 3"></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quick Actions -->
+        <section class="quick-actions" aria-label="Quick Access Services">
+            <div class="container">
+                <div class="actions-grid">
+                    <a href="#" class="action-card" style="--accent: var(--saffron)">
+                        <div class="action-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+                                <circle cx="9" cy="7" r="4" />
+                                <line x1="19" y1="8" x2="19" y2="14" />
+                                <line x1="22" y1="11" x2="16" y2="11" />
+                            </svg>
+                        </div>
+                        <div class="action-text">
+                            <span class="action-title">Join Library</span>
+                            <span class="action-sub">Online Registration</span>
+                        </div>
+                        <span class="action-arrow">→</span>
+                    </a>
+                    <a href="#" class="action-card" style="--accent: var(--blue)">
+                        <div class="action-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
+                                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" />
+                            </svg>
+                        </div>
+                        <div class="action-text">
+                            <span class="action-title">E-Library</span>
+                            <span class="action-sub">Journals & E-Books</span>
+                        </div>
+                        <span class="action-arrow">→</span>
+                    </a>
+                    <a href="#" class="action-card" style="--accent: var(--green)">
+                        <div class="action-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                                <circle cx="12" cy="10" r="3" />
+                            </svg>
+                        </div>
+                        <div class="action-text">
+                            <span class="action-title">Branch Locator</span>
+                            <span class="action-sub">Find Nearby Libraries</span>
+                        </div>
+                        <span class="action-arrow">→</span>
+                    </a>
+                    <a href="#" class="action-card" style="--accent: var(--purple)">
+                        <div class="action-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+                                <line x1="16" y1="2" x2="16" y2="6" />
+                                <line x1="8" y1="2" x2="8" y2="6" />
+                                <line x1="3" y1="10" x2="21" y2="10" />
+                            </svg>
+                        </div>
+                        <div class="action-text">
+                            <span class="action-title">Events</span>
+                            <span class="action-sub">View Calendar</span>
+                        </div>
+                        <span class="action-arrow">→</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- News & Updates Section -->
+        <section class="news-section" aria-label="News and Updates">
+            <div class="container">
+                <div class="news-grid">
+                    <div class="news-main">
+                        <div class="section-header">
+                            <div class="tabs" role="tablist">
+                                <button class="tab active" role="tab" aria-selected="true">Latest News</button>
+                                <button class="tab" role="tab" aria-selected="false">Announcements</button>
+                                <button class="tab" role="tab" aria-selected="false">Tenders</button>
+                            </div>
+                            <a href="#" class="view-all">View All →</a>
+                        </div>
+
+                        <div class="news-content">
+                            <article class="news-featured">
+                                <div class="news-image">
+                                    <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=600&q=80"
+                                        alt="Children's Literacy Festival">
+                                    <span class="news-tag">Cultural Event</span>
+                                </div>
+                                <div class="news-body">
+                                    <time datetime="2026-01-05">Jan 05, 2026</time>
+                                    <h3>State-wide Children's Literacy Festival Begins Tomorrow</h3>
+                                    <p>The festival features story-telling sessions, painting competitions and puppet
+                                        shows across 20 branches throughout Delhi.</p>
+                                    <a href="#" class="read-more">Read More →</a>
+                                </div>
+                            </article>
+
+                            <div class="news-list">
+                                <article class="news-item">
+                                    <div class="news-thumb">
+                                        <img src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=100&q=80"
+                                            alt="UPSC Materials">
+                                    </div>
+                                    <div class="news-info">
+                                        <span class="news-category education">Education</span>
+                                        <h4>New UPSC 2026 coaching materials added to Reference Section</h4>
+                                        <time>Jan 03, 2026</time>
+                                    </div>
+                                </article>
+                                <article class="news-item">
+                                    <div class="news-thumb">
+                                        <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=100&q=80"
+                                            alt="Mobile Library">
+                                    </div>
+                                    <div class="news-info">
+                                        <span class="news-category services">Services</span>
+                                        <h4>Mobile Library Bus routes updated for January schedule</h4>
+                                        <time>Jan 02, 2026</time>
+                                    </div>
+                                </article>
+                                <article class="news-item">
+                                    <div class="news-thumb">
+                                        <img src="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=100&q=80"
+                                            alt="Heritage Archive">
+                                    </div>
+                                    <div class="news-info">
+                                        <span class="news-category admin">Tender</span>
+                                        <h4>Extension of bid submission for digitizing heritage archive</h4>
+                                        <time>Dec 30, 2025</time>
+                                    </div>
+                                </article>
+                            </div>
+                        </div>
+                    </div>
+
+                    <aside class="news-sidebar">
+                        <!-- Director's Message -->
+                        <div class="sidebar-card director-card">
+                            <h3><span class="indicator"></span>Director's Message</h3>
+                            <div class="director-content">
+                                <div class="director-image">
+                                    <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=300&q=80"
+                                        alt="Director">
+                                    <button class="play-btn" aria-label="Play Video Message">
+                                        <svg viewBox="0 0 24 24" fill="currentColor">
+                                            <path d="M8 5v14l11-7z" />
+                                        </svg>
+                                    </button>
+                                </div>
+                                <div class="director-info">
+                                    <strong>Prof. Ajay Kumar Singh</strong>
+                                    <span>Director, DPL</span>
+                                </div>
+                                <blockquote>"Our vision for 2030 is to turn every library branch into a digital learning
+                                    hub where technology meets heritage."</blockquote>
+                            </div>
+                        </div>
+
+                        <!-- Social Feed -->
+                        <div class="sidebar-card social-card">
+                            <h3><span class="indicator saffron"></span>Social Updates</h3>
+                            <div class="social-post">
+                                <div class="social-header">
+                                    <div class="social-icon twitter">𝕏</div>
+                                    <div class="social-meta">
+                                        <strong>@DelhiPubLib</strong>
+                                        <span>2 hours ago</span>
+                                    </div>
+                                </div>
+                                <p>Join us at the Central Library today for a special workshop on Sanskrit Calligraphy!
+                                    ✨ #DPL #DelhiCulture</p>
+                            </div>
+                            <a href="#" class="btn-outline">Follow Us</a>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section class="services-section" aria-label="Our Services">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Our Services</h2>
+                    <p>Comprehensive library services for students, researchers, and citizens</p>
+                </div>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon">📚</div>
+                        <h3>Book Lending</h3>
+                        <p>Borrow from our collection of 1.8M+ books across 30+ languages</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">💻</div>
+                        <h3>Digital Resources</h3>
+                        <p>Access e-books, journals, and research databases online</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">📰</div>
+                        <h3>Periodicals</h3>
+                        <p>Read newspapers and magazines in multiple languages</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">🚌</div>
+                        <h3>Mobile Library</h3>
+                        <p>Library on wheels serving remote areas of Delhi</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">👶</div>
+                        <h3>Children's Section</h3>
+                        <p>Special collection and activities for young readers</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">♿</div>
+                        <h3>Accessible Services</h3>
+                        <p>Braille books and assistive technology for specially-abled</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section class="stats-section" aria-label="Library Statistics">
+            <div class="stats-bg"></div>
+            <div class="container">
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <span class="stat-value" data-count="1800000">1.8M+</span>
+                        <span class="stat-name">Physical Books</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-value" data-count="4500000">4.5M+</span>
+                        <span class="stat-name">Active Members</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-value">37</span>
+                        <span class="stat-name">Delhi Branches</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-value">500K+</span>
+                        <span class="stat-name">Digital Assets</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <div class="footer-logo">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/5/55/Emblem_of_India.svg" alt="Emblem"
+                            class="footer-emblem">
+                        <div>
+                            <h4>Delhi Public Library</h4>
+                            <p>Ministry of Culture, Govt. of India</p>
+                        </div>
+                    </div>
+                    <p class="footer-desc">Established in 1951 as a pilot project by UNESCO and the Government of India,
+                        serving as a premier public library system.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+                            </svg></a>
+                        <a href="#" aria-label="Twitter"><svg viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z" />
+                            </svg></a>
+                        <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z" />
+                                <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" />
+                            </svg></a>
+                        <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                            </svg></a>
+                    </div>
+                </div>
+
+                <div class="footer-links">
+                    <h5>Resources</h5>
+                    <ul>
+                        <li><a href="#">Online Catalog</a></li>
+                        <li><a href="#">Digital Archive</a></li>
+                        <li><a href="#">New Arrivals</a></li>
+                        <li><a href="#">Periodicals</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-links">
+                    <h5>Governance</h5>
+                    <ul>
+                        <li><a href="#">RTI Disclosures</a></li>
+                        <li><a href="#">Tenders</a></li>
+                        <li><a href="#">Recruitment</a></li>
+                        <li><a href="#">Annual Reports</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-contact">
+                    <h5>Contact Us</h5>
+                    <address>
+                        Central Library, H.P.O Building,<br>
+                        Old Delhi - 110006<br>
+                        <strong>Ph:</strong> 011-23951112<br>
+                        <strong>Email:</strong> info@dpl.gov.in
+                    </address>
+                </div>
+            </div>
+
+            <!-- Government Logos -->
+            <div class="gov-logos">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Digital_India_logo.svg/320px-Digital_India_logo.svg.png"
+                    alt="Digital India">
+                <img src="https://upload.wikimedia.org/wikipedia/en/thumb/4/41/Make_in_India.svg/200px-Make_in_India.svg.png"
+                    alt="Make in India">
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <div class="footer-policies">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Use</a>
+                    <a href="#">Accessibility Statement</a>
+                    <a href="#">Copyright Policy</a>
+                    <a href="#">Hyperlinking Policy</a>
+                </div>
+                <div class="footer-meta">
+                    <p>Last Updated: January 05, 2026</p>
+                    <p>© 2026 Delhi Public Library. All Rights Reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
